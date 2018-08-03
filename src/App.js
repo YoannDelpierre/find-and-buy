@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Customers from './components/customers';
 import Properties from './components/properties';
+import { generateCustomers } from './api/customers';
+import { generateProperties } from './api/properties';
 import './App.css';
 
 const timeout = ms => new Promise(res => setTimeout(res, ms))
@@ -29,10 +31,18 @@ class App extends Component {
   }
 
   render() {
+    const { isLoading, customers, properties } = this.state;
     return (
       <div className="App">
         <header className="App-header">
+          {isLoading ? <span>Loading</span> : <span>Find and Buy</span>}
         </header>
+        {!isLoading && (
+          <div className="App-columns">
+            <Properties properties={properties} />
+            <Customers customers={customers} />
+          </div>
+        )}
       </div>
     );
   }
