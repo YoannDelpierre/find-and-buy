@@ -1,0 +1,7 @@
+.Customers {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    flex: 1 0 auto;
+    padding: 10px;
+}
