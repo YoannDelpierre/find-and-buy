@@ -18,3 +18,7 @@
     background: grey;
     color: white;
 }
+
+.Property div { 
+    margin: 5px 0;
+}
