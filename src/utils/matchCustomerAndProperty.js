@@ -1,13 +1,13 @@
 export const isSurfaceMatch = (surfaceProperty, surfaceCustomer) => {
-    return surfaceCustomer < surfaceProperty * 1.10 && surfaceCustomer > surfaceProperty * 0.90;
+    return surfaceCustomer <= surfaceProperty * 1.10 && surfaceCustomer >= surfaceProperty * 0.90;
 }
 
 export const isPriceMatch = (priceProperty, priceCustomer) => {
-    return priceCustomer < priceProperty * 1.10 && priceCustomer > priceProperty * 0.90;
+    return priceCustomer <= priceProperty * 1.10 && priceCustomer >= priceProperty * 0.90;
 }
 
 export const isRoomsMatch = (roomsProperty, roomsCustomer) => {
-    return roomsCustomer < roomsProperty + 1 && roomsCustomer > roomsProperty - 1;
+    return roomsCustomer <= roomsProperty + 1 && roomsCustomer >= roomsProperty - 1;
 }
 
 export const matchProperty = (property, customers) => {
