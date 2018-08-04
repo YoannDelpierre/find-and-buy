@@ -7,8 +7,8 @@ import './App.css';
 const timeout = ms => new Promise(res => setTimeout(res, ms))
 
 class App extends Component {
-  constructor(args) {
-    super(...args);
+  constructor(props) {
+    super(props);
     this.state = {
       isLoading: true,
       customers: [],
