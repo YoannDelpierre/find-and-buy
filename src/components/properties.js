@@ -29,7 +29,7 @@ class Properties extends Component {
                     {properties.map((property, index) => {
                         const isFlat = property.type === 'flat';
                         return (
-                            <div key={`property-${index}`}>
+                            <div data-test="property" key={`property-${index}`}>
                                 <div className="Property">
                                     <div>Type : {property.type}</div>
                                     <div>Price : {property.price}</div>
