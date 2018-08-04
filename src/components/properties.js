@@ -11,6 +11,7 @@ class Properties extends Component {
                     return (
                         <li key={`property-${index}`} className="Property">
                             <div>Type : {property.type}</div>
+                            <div>Price : {property.price}</div>
                             <div>Surface : {property.surface}m</div>
                             <div>Rooms : {property.rooms}</div>
                             <div>Cave : {property.cave ? (<span>👍</span>) : (<span>👎</span>)}</div>
@@ -20,6 +21,7 @@ class Properties extends Component {
                             {!isFlat && (
                                  <div>Garden : {property.garden}m</div>
                             )}
+                            <button className="PropertyFind">Find a customer</button>
                         </li>
                     )
                 })}

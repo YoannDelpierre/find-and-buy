@@ -19,7 +19,7 @@ class App extends Component {
 
   async componentDidMount() {
     const customers = await generateCustomers();
-    const properties = await generateProperties();
+    const properties = await generateProperties(1);
 
     // Simulate loading
     await timeout(2000);
