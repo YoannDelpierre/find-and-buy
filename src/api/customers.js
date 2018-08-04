@@ -3,7 +3,7 @@ const Chance = require('chance');
 const generatUniqueCustomer = () => {
     const chance = new Chance();
     return {
-        id: chance.string({ length: 30 }),
+        id: chance.guid(),
         lastName: chance.last(),
         firstName: chance.name(),
         phone: chance.phone({ country: 'fr' })
