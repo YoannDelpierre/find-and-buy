@@ -1,7 +1,6 @@
 .Properties {
     display: flex;
     flex-direction: column;
-    background: lightgrey;
     width: 100%;
     flex: 1 0 auto;
     list-style: none;
@@ -15,15 +14,10 @@
 }
 
 .Property:nth-child(odd) {
-    background: grey;
-    color: white;
+    background: lightgrey;
+    color: black;
 }
 
 .Property div { 
     margin: 5px 0;
-}
-
-.PropertyFind {
-    margin:0;
-    padding: 5px;
 }

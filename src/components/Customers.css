@@ -1,7 +1,18 @@
 .Customers {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
     flex: 1 0 auto;
     padding: 10px;
+}
+
+.Customer {
+    width: 50%;
+}
+
+.Customer-List {
+    padding: 5px;
+    list-style: none;
+    text-align: left;
 }
