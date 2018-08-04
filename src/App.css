@@ -7,8 +7,19 @@
 }
 
 .App-header {
-  background-color: #3e5969;
+  background-color: #00d49c;
   padding: 20px;
   color: white;
   font-size: 4.5em;
+}
+
+.Button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #FF4D00;
+  font-size: 1em;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
 }

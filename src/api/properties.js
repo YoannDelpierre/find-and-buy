@@ -1,10 +1,10 @@
 const Chance = require('chance');
 const chance = new Chance();
 
-const generateUniqueProperty = () => {
+export const generateUniqueProperty = () => {
     const type = chance.bool() ? 'flat' : 'house';
     const surface = chance.integer({ min: 20, max: 100 });
-    const price = chance.euro({ min: surface * 5000, max: surface * 8500 })
+    const price = chance.integer({ min: surface * 5000, max: surface * 8500 })
     // Tricks for having rooms matches more or less surface
     const rooms = (Math.round((surface / 20)) * 100) / 100;
 
