@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Customers from './components/customers';
 import Properties from './components/properties';
 import { generateCustomers } from './api/customers';
 import { generateProperties } from './api/properties';
@@ -18,15 +17,18 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const customers = await generateCustomers();
-    const properties = await generateProperties(1);
-
+    const [property] = await generateProperties(1);
+    await timeout(1000);
     // Simulate loading
-    await timeout(2000);
+
+    const customers = await generateCustomers(50, property.surface); // Trick to generate for demo customers based on property
+    await timeout(1000);
+    // Simulate loading
+
     this.setState({
       isLoading: !this.state.isLoading,
       customers,
-      properties,
+      properties: [property]
     });
   }
 
@@ -39,8 +41,7 @@ class App extends Component {
         </header>
         {!isLoading && (
           <div className="App-columns">
-            <Properties properties={properties} />
-            <Customers customers={customers} />
+            <Properties properties={properties} customers={customers} />
           </div>
         )}
       </div>
