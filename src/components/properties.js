@@ -8,6 +8,7 @@ class Properties extends Component {
         super(props);
         this.state = {
             customersMatch: [],
+            hasClicked: false,
         };
     }
 
@@ -23,13 +24,14 @@ class Properties extends Component {
     render() {
         const { properties, customers: customersProps } = this.props;
         const { customersMatch, hasClicked } = this.state;
+        console.log('customersMatch', customersMatch, hasClicked);
         return (
             <div>
                 <div className="Properties">
                     {properties.map((property, index) => {
                         const isFlat = property.type === 'flat';
                         return (
-                            <div key={`property-${index}`}>
+                            <div data-test="property" key={`property-${index}`}>
                                 <div className="Property">
                                     <div>Type : {property.type}</div>
                                     <div>Price : {property.price}</div>
@@ -43,7 +45,7 @@ class Properties extends Component {
                                         <div>Garden : {property.garden}m</div>
                                     )}
                                 </div>
-                                <button className="Button" onClick={() => this.findACustomer(property)}>
+                                <button data-test="property-find" className="Button" onClick={() => this.findACustomer(property)}>
                                     Find a customer in our {customersProps.length} customers
                                 </button>
                             </div>
@@ -51,7 +53,9 @@ class Properties extends Component {
                     })}
                 </div>
                 {customersMatch.length > 0 && hasClicked && (
-                    <Customers customers={customersMatch}/>
+                    <div data-test="customers-match">
+                        <Customers customers={customersMatch}/>
+                    </div>
                 )}
             </div>
         );
